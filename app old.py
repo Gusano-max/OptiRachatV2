@@ -7,120 +7,6 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from io import BytesIO
 
-# --- 🎨 Correction de la sidebar ---
-st.markdown("""
-    <style>
-        /* Style des champs input pour un rendu plus élégant */
-        section[data-testid="stSidebar"] input {
-            color: #FFFFFF !important;  /* Texte blanc */
-            background-color: #1E1E1E !important; /* Fond noir doux */
-            font-size: 16px !important; /* Taille ajustée */
-            font-weight: normal !important; /* Suppression du gras */
-            border: none !important; /* Suppression des bordures internes */
-            border-radius: 8px !important; /* Arrondir les coins */
-            padding: 10px !important; /* Espacement interne */
-            width: 100% !important; /* Champs bien remplis */
-            outline: none !important; /* Supprimer la lueur autour du champ */
-        }
-
-        /* Style des boutons "+" et "-" pour les harmoniser */
-        section[data-testid="stSidebar"] button {
-            background-color: #1E1E1E !important; /* Même fond que les inputs */
-            color: #FFFFFF !important; /* Texte en blanc */
-            border: none !important; /* Supprimer les bordures */
-            padding: 8px !important; /* Ajustement du padding */
-            font-size: 16px !important; /* Taille homogène */
-            border-radius: 8px !important; /* Bords arrondis */
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
-
-st.markdown("""
-    <style>
-        /* Fond de la sidebar */
-        section[data-testid="stSidebar"] {
-            background-color: #FFFFFF !important; /* Blanc */
-        }
-
-        /* Texte et labels dans la sidebar */
-        section[data-testid="stSidebar"] * {
-            color: #333333 !important; /* Noir foncé */
-            font-weight: bold !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-    <style>
-        /* 🎨 Garder la sidebar en blanc avec texte noir */
-        section[data-testid="stSidebar"] {
-            background-color: #FFFFFF !important; /* Fond blanc */
-            color: #000000 !important; /* Texte noir */
-        }
-
-        /* 📝 Labels et textes en noir */
-        section[data-testid="stSidebar"] label,
-        section[data-testid="stSidebar"] * {
-            color: #000000 !important; /* Texte en noir */
-            font-weight: normal !important;
-        }
-
-        /* 🔢 Style des champs input (fond noir, texte blanc) */
-        section[data-testid="stSidebar"] input {
-            color: #FFFFFF !important;  /* Texte blanc */
-            background-color: #000000 !important; /* Fond noir */
-            font-size: 16px !important; /* Taille ajustée */
-            border: none !important; /* Pas de bordure interne */
-            border-radius: 8px !important; /* Coins arrondis */
-            padding: 12px !important; /* Espacement interne */
-            width: 100% !important; /* Champs bien remplis */
-            outline: none !important; /* Supprimer l'effet de focus */
-        }
-
-        /* ➕➖ Style des boutons "+" et "-" */
-        section[data-testid="stSidebar"] button {
-            background-color: #000000 !important; /* Même fond que les inputs */
-            color: #FFFFFF !important; /* Texte blanc */
-            border: none !important; /* Pas de bordure interne */
-            padding: 8px !important; /* Ajustement du padding */
-            font-size: 16px !important; /* Taille homogène */
-            border-radius: 8px !important; /* Coins carrés */
-            width: 40px !important; /* Largeur adaptée */
-            height: 40px !important; /* Hauteur adaptée */
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        /* 🎯 Assurer que les icônes "+" et "-" restent bien visibles */
-        section[data-testid="stSidebar"] button svg {
-            fill: #FFFFFF !important; /* Icônes en blanc */
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
-
-# --- 📌 Formatage des nombres ---
-def format_currency(value):
-    """Formate les nombres en ajoutant un séparateur de milliers et une virgule comme séparateur décimal."""
-    return f"{value:,.2f} €".replace(",", " ").replace(".", ",")
-
-
-
-# --- 🎨 Correction du bandeau noir en Streamlit ---
-st.markdown("""
-    <style>
-        .stSidebar, .css-1d391kg {
-            background-color: #FFFFFF !important;
-            color: #333333 !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
 
 # --- 🎨 Personnalisation UI ---
 st.markdown("""
@@ -205,35 +91,18 @@ st.markdown("""
 # --- 🏠 Affichage du logo et du slogan ---
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("F:\OneDrive - TG FINANCE\Perso\Codes python\OptiRachat\Asset\logo.webp", width=300)
+    st.image("logo.webp", width=300)
 
 
 st.markdown("""
     <h2 style='text-align: center; color: #00A79D;'>
         Zéro complication, maxi économies
     </h2>
-    <h3 style='text-align: center; color: #00A79D;'>
+    <h3 style='text-align: center; color: white;'>
         Avec OptiRachat,<br> économiser n'a jamais été aussi simple !
     </h3>
 """, unsafe_allow_html=True)
 
-# --- Ajout de la ligne sous le slogan ---
-st.markdown("""
-    <h5 style='text-align: center; font-size: 1.2rem; color: black; margin-top : -15px; margin-bottom : +40px;'>
-        Un outil pour simuler votre rachat de crédit
-    </h5>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-    <div style="
-        width: 100%;
-        height: 5px;
-        background: linear-gradient(to right, rgba(0, 167, 157, 0), #00A79D, rgba(0, 167, 157, 0));
-        border-radius: 5px;
-        margin-top: -5px;
-        margin-bottom: 15px;
-    "></div>
-""", unsafe_allow_html=True)
 
 
 # --- 🎛 Paramètres du prêt ---
@@ -245,6 +114,7 @@ start_date = st.sidebar.date_input("Date de départ du prêt actuel", value=date
 
 today = datetime.date.today()
 st.write(f"📅 **Date du jour :** {today.strftime('%d/%m/%Y')}")
+st.write(f"📅 **Date de départ du prêt :** {start_date.strftime('%d/%m/%Y')}")
 
 # --- 📌 Fonctions de calcul ---
 def calculate_remaining_principal(P, r_annual, N_months, n_months_elapsed):
@@ -281,34 +151,33 @@ def generate_pdf():
 
     # --- Informations du prêt initial ---
     add_line("🏠 Situation actuelle du prêt", size=14, bold=True)
-    add_line(f"Date initiale du prêt : {start_date.strftime('%d/%m/%Y')}")
-    add_line(f"Capital restant dû : {format_currency(remaining_principal)}")
+    add_line(f"Capital restant dû : {remaining_principal:,.2f} €")
     add_line(f"Nombre de mensualités restantes : {n_remaining}")
-    add_line(f"Mensualité actuelle : {format_currency(original_monthly)}")
-    add_line(f"Coût total restant (sans rachat) : {format_currency(total_cost_original)}")
+    add_line(f"Mensualité actuelle : {original_monthly:,.2f} €")
+    add_line(f"Coût total restant (sans rachat) : {total_cost_original:,.2f} €")
     y_position -= 10
 
     # --- Frais liés au rachat ---
     add_line("💰 Frais liés au rachat", size=14, bold=True)
-    add_line(f"Pénalités de remboursement anticipé : {format_currency(penalty_interest)}")
-    add_line(f"Garantie bancaire (1.5%) : {format_currency(guarantee_fee)}")
-    add_line(f"Honoraires de courtage (1%) : {format_currency(brokerage_fee)}")
-    add_line(f"Nouveau montant à financer : {format_currency(new_total)}")
+    add_line(f"Pénalités de remboursement anticipé : {penalty_interest:,.2f} €")
+    add_line(f"Garantie bancaire (1.5%) : {guarantee_fee:,.2f} €")
+    add_line(f"Honoraires de courtage (1%) : {brokerage_fee:,.2f} €")
+    add_line(f"Nouveau montant à financer : {new_total:,.2f} €")
     y_position -= 10
 
     # --- Comparaison avec le refinancement ---
     add_line("📉 Comparaison avec refinancement", size=14, bold=True)
     add_line(f"Taux proposé : {new_rate_input:.2f} %")
-    add_line(f"Nouvelle mensualité : {format_currency(new_monthly_full)}")
-    add_line(f"Coût total avec rachat : {format_currency(total_cost_refinanced)}")
-    add_line(f"Gains nets (économie réalisée) : {format_currency(gains_nets)}", bold=True, color=(0, 0.6, 0))
+    add_line(f"Nouvelle mensualité : {new_monthly_full:,.2f} €")
+    add_line(f"Coût total avec rachat : {total_cost_refinanced:,.2f} €")
+    add_line(f"Gains nets (économie réalisée) : {gains_nets:,.2f} €", bold=True, color=(0, 0.6, 0))
     y_position -= 10
 
     # --- Conserver la mensualité initiale et réduire la durée ---
     add_line("📆 Option : Conserver la mensualité actuelle", size=14, bold=True)
     add_line(f"Nouvelle durée : {new_duration_years} ans et {new_duration_remaining_months} mois")
-    add_line(f"Nouveau coût total : {format_currency(total_cost_with_reduced_duration)}")
-    add_line(f"Économies réalisées : {format_currency(savings_with_reduced_duration)}", bold=True, color=(0, 0.6, 0))
+    add_line(f"Nouveau coût total : {total_cost_with_reduced_duration:,.2f} €")
+    add_line(f"Économies réalisées : {savings_with_reduced_duration:,.2f} €", bold=True, color=(0, 0.6, 0))
     y_position -= 10
 
     # --- Bonus mojitos 🍹 ---
@@ -379,27 +248,26 @@ net_total_savings = net_interest_savings - total_fees
 
 # --- 📊 Affichage des résultats ---
 st.subheader("🏠 Situation actuelle du prêt")
-st.write(f"📅 **Date initiale du prêt :** {start_date.strftime('%d/%m/%Y')}")
-st.write(f"📌 **Capital restant dû :** {format_currency(remaining_principal)}")
+st.write(f"📌 **Capital restant dû :** {remaining_principal:,.2f} €")
 st.write(f"📌 **Nombre de mensualités restantes :** {n_remaining}")
-st.write(f"📌 **Mensualité actuelle :** {format_currency(original_monthly)}")
-st.write(f"📌 **Coût total restant (sans rachat) :** {format_currency(total_cost_original)}")
+st.write(f"📌 **Mensualité actuelle :** {original_monthly:,.2f} €")
+st.write(f"📌 **Coût total restant (sans rachat) :** {total_cost_original:,.2f} €")
 
 st.subheader("💰 Frais liés au rachat")
-st.write(f"📌 **Capital restant dû :** {format_currency(remaining_principal)}")
-st.write(f"➕ **Pénalités de remboursement anticipé :** {format_currency(penalty_interest)}")
-st.write(f"➕ **Garantie bancaire (1.5%) :** {format_currency(guarantee_fee)}")
-st.write(f"➕ **Honoraires de courtage (1%) :** {format_currency(brokerage_fee)}")
-st.write(f"🟰 **Nouveau montant à financer :** {format_currency(new_total)}")
+st.write(f"📌 **Capital restant dû :** {remaining_principal:,.2f} €")
+st.write(f"➕ **Pénalités de remboursement anticipé :** {penalty_interest:,.2f} €")
+st.write(f"➕ **Garantie bancaire (1.5%) :** {guarantee_fee:,.2f} €")
+st.write(f"➕ **Honoraires de courtage (1%) :** {brokerage_fee:,.2f} €")
+st.write(f"🟰 **Nouveau montant à financer :** {new_total:,.2f} €")
 
 st.subheader("💰 Taux de refinancement minimum pour un rachat")
 st.write(f"Le taux de refinancement doit être inférieur à **{break_even_rate:.4f}%** pour que le rachat soit intéressant.")
 
 st.subheader("Comparaison sur la durée restante avec le nouveau taux")
-st.write(f"**📊 Mensualité actuelle :** {format_currency(original_monthly)}")
-st.write(f"**📊 Nouvelle mensualité avec rachat au taux de {new_rate_input:.2f}% :** {format_currency(new_monthly_full)}")
-st.write(f"**📊 Coût total restant sans rachat :** {format_currency(total_cost_original)}")
-st.write(f"**📊 Coût total restant avec rachat au taux de {new_rate_input:.2f}% :** {format_currency(total_cost_refinanced)}")
+st.write(f"**📊 Mensualité actuelle :** {original_monthly:,.2f} €")
+st.write(f"**📊 Nouvelle mensualité avec rachat au taux de {new_rate_input:.2f}% :** {new_monthly_full:,.2f} €")
+st.write(f"**📊 Coût total restant sans rachat :** {total_cost_original:,.2f} €")
+st.write(f"**📊 Coût total restant avec rachat au taux de {new_rate_input:.2f}% :** {total_cost_refinanced:,.2f} €")
 st.subheader("🎯 Date du point mort (frais absorbés)")
 st.write(f"📆 **{break_even_date_str}**")
 
@@ -407,7 +275,7 @@ st.write(f"📆 **{break_even_date_str}**")
 # Affichage dynamique des gains/pertes
 color = "green" if gains_nets >= 0 else "red"
 label = "💰 Gains nets ( frais absorbés ):" if gains_nets >= 0 else "💸 Pertes nettes :"
-st.write(f"**{label}** <span style='color:{color}; font-weight:bold;'>{format_currency(gains_nets)}</span>", unsafe_allow_html=True)
+st.write(f"**{label}** <span style='color:{color}; font-weight:bold;'>{gains_nets:,.2f} €</span>", unsafe_allow_html=True)
 
 # --- 🏦 OPTION : Conserver la mensualité actuelle et réduire la durée ---
 st.subheader("📉 Conserver sa mensualité actuelle")
@@ -432,27 +300,27 @@ total_cost_with_reduced_duration = original_monthly * new_duration_months
 savings_with_reduced_duration = total_cost_original - total_cost_with_reduced_duration
 
 st.write(f"📆 **Nouvelle durée du prêt si on conserve la mensualité actuelle :** {new_duration_years} ans et {new_duration_remaining_months} mois")
-st.write(f"💰 **Nouveau coût total du prêt avec durée réduite :** {format_currency(total_cost_with_reduced_duration)}")
+st.write(f"💰 **Nouveau coût total du prêt avec durée réduite :** {total_cost_with_reduced_duration:,.2f} €")
 
 # Affichage dynamique des économies réalisées
 color_savings = "green" if savings_with_reduced_duration >= 0 else "red"
 label_savings = "💰 Économies réalisées :" if savings_with_reduced_duration >= 0 else "💸 Surcoût :"
-st.write(f"**{label_savings}** <span style='color:{color_savings}; font-weight:bold;'>{format_currency(savings_with_reduced_duration)}</span>", unsafe_allow_html=True)
+st.write(f"**{label_savings}** <span style='color:{color_savings}; font-weight:bold;'>{savings_with_reduced_duration:,.2f} €</span>", unsafe_allow_html=True)
 
 # --- 🍹 Bonus : Combien de mojitos avec les économies réalisées ? ---
 mojito_price = 6.50
 mojito_count = max(0, savings_with_reduced_duration // mojito_price)  # On évite d'afficher des mojitos négatifs !
 
-st.write(f"🍹 **Moins de taux, plus de mojitos !** Avec ces économies, tu peux te payer **{mojito_count:,.0f} mojitos** ! Santé ! 🏝️😎".replace(",", " "))
+st.write(f"🍹 **Moins de taux, plus de mojitos !** Avec ces économies, tu peux te payer **{int(mojito_count)} mojitos** ! Santé ! 🏝️😎")
 
 
 
 
 st.subheader("📉 Synthèse")
-st.write(f"💸 **Total intérêts restants avant le rachat :** {format_currency(total_interest_original)}")
-st.write(f"💸 **Total intérêts après le rachat (frais déduits) :** {format_currency(total_interest_refinanced)}")
-st.write(f"💰 **Différence intérêts entre les deux taux :** {format_currency(net_interest_savings)}")
-st.write(f"💰 **Gains nets du rachat (après frais) :** {format_currency(net_total_savings)}")
+st.write(f"💸 **Total intérêts restants avant le rachat :** {total_interest_original:,.2f} €")
+st.write(f"💸 **Total intérêts après le rachat (frais déduits) :** {total_interest_refinanced:,.2f} €")
+st.write(f"💰 **Différence intérêts entre les deux taux :** {net_interest_savings:,.2f} €")
+st.write(f"💰 **Gains nets du rachat (après frais) :** {net_total_savings:,.2f} €")
 
 st.subheader("📄 Télécharger votre simulation")
 
@@ -491,56 +359,9 @@ st.markdown("""
 
 st.markdown("""
     <div class="contact-box">
-        📩 Pour plus de renseignements, contactez-moi !<br><br>
+        📩 **Pour plus de renseignements, contactez-moi !**<br><br>
         📨 DM via <a href="https://twitter.com/gusano197" target="_blank">@gusano197</a> ou ✉ <a href="mailto:contact@talan-patrimoine.fr">contact@talan-patrimoine.fr</a>
     </div>
 """, unsafe_allow_html=True)
-
-
-
-
-# --- 🎨 Gestion du Mode Clair/Sombre + Amélioration de la visibilité ---
-def set_theme():
-    theme_css = '''
-    <style>
-        /* Fond clair par défaut */
-        body, .stApp {
-            background-color: #F8F9FA !important;
-            color: #333333 !important;
-        }
-
-        /* Titres centrés */
-        h2, h3 {
-            text-align: center;
-        }
-
-        /* Sidebar en blanc */
-        .stSidebar {
-            background-color: #FFFFFF !important;
-        }
-
-        /* Style des inputs de la sidebar */
-        section[data-testid="stSidebar"] input {
-            color: #FFFFFF !important;  /* Chiffres en blanc */
-            background-color: #000000 !important; /* Fond noir */
-            font-size: 14px !important; /* Taille réduite */
-            font-weight: normal !important; /* Suppression du gras */
-            border: 1px solid #00A79D !important; /* Bordure verte */
-            padding: 5px; /* Ajustement de l'espace interne */
-        }
-
-        /* Correction de la couleur des labels de la sidebar */
-        section[data-testid="stSidebar"] label {
-            color: #FFFFFF !important; /* Labels en blanc */
-            font-size: 13px !important; /* Taille légèrement réduite */
-            font-weight: normal !important; /* Suppression du gras */
-        }
-    </style>
-    '''
-    st.markdown(theme_css, unsafe_allow_html=True)
-
-# Appliquer le thème
-set_theme()
-
 
 
