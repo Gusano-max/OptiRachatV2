@@ -500,7 +500,7 @@ st.markdown("""
 st.markdown("""
     <div class="contact-box">
         📩 Pour plus de renseignements, contactez-moi !<br><br>
-        📨 DM via <a href="https://twitter.com/gusano197" target="_blank">@gusano197</a> ou ✉ <a href="mailto:nicolas.galan@talan-patrimoine.fr">contact@talan-patrimoine.fr</a>
+        📨 DM via <a href="https://twitter.com/gusano197" target="_blank">@gusano197</a> ou ✉ <a href="mailto:nicolas.galan@talan-patrimoine.fr">nicolas.galan@talan-patrimoine.fr</a>
     </div>
 """, unsafe_allow_html=True)
 
