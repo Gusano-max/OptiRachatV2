@@ -205,7 +205,7 @@ st.markdown("""
 # --- 🏠 Affichage du logo et du slogan ---
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("F:\OneDrive - TG FINANCE\Perso\Codes python\OptiRachatV2\logo.webp", width=300)
+    st.image("logo.webp", width=300)
 
 
 st.markdown("""
