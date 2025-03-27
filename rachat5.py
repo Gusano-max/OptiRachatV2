@@ -205,7 +205,7 @@ st.markdown("""
 # --- 🏠 Affichage du logo et du slogan ---
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("logo.webp", width=300)
+    st.image("F:\OneDrive - TG FINANCE\Perso\Codes python\OptiRachatV2\logo.webp", width=300)
 
 
 st.markdown("""
@@ -314,6 +314,7 @@ def generate_pdf():
     # --- Bonus mojitos 🍹 ---
     add_line("🍹 Moins de taux, plus de mojitos !", size=14, bold=True, color=(0, 0.5, 1))
     add_line(f"Nombre de mojitos offerts : {int(mojito_count)} 🏝️")
+    add_line("📢 L’abus d’alcool est dangereux pour la santé, à consommer avec modération", size=10, bold=True, color=(0, 0.5, 1))
 
     # --- Finalisation du PDF ---
     pdf.save()
@@ -385,6 +386,9 @@ st.write(f"📌 **Nombre de mensualités restantes :** {n_remaining}")
 st.write(f"📌 **Mensualité actuelle :** {format_currency(original_monthly)}")
 st.write(f"📌 **Coût total restant (sans rachat) :** {format_currency(total_cost_original)}")
 
+st.subheader("💰 Taux de refinancement minimum pour un rachat")
+st.write(f"🎯 Le taux de refinancement doit être inférieur à **{break_even_rate:.4f}%** pour que le rachat soit intéressant.")
+
 st.subheader("💰 Frais liés au rachat")
 st.write(f"📌 **Capital restant dû :** {format_currency(remaining_principal)}")
 st.write(f"➕ **Pénalités de remboursement anticipé :** {format_currency(penalty_interest)}")
@@ -392,8 +396,7 @@ st.write(f"➕ **Garantie bancaire (1.5%) :** {format_currency(guarantee_fee)}")
 st.write(f"➕ **Honoraires de courtage (1%) :** {format_currency(brokerage_fee)}")
 st.write(f"🟰 **Nouveau montant à financer :** {format_currency(new_total)}")
 
-st.subheader("💰 Taux de refinancement minimum pour un rachat")
-st.write(f"Le taux de refinancement doit être inférieur à **{break_even_rate:.4f}%** pour que le rachat soit intéressant.")
+
 
 st.subheader("Comparaison sur la durée restante avec le nouveau taux")
 st.write(f"**📊 Mensualité actuelle :** {format_currency(original_monthly)}")
@@ -444,6 +447,11 @@ mojito_price = 6.50
 mojito_count = max(0, savings_with_reduced_duration // mojito_price)  # On évite d'afficher des mojitos négatifs !
 
 st.write(f"🍹 **Moins de taux, plus de mojitos !** Avec ces économies, tu peux te payer **{mojito_count:,.0f} mojitos** ! Santé ! 🏝️😎".replace(",", " "))
+st.markdown(
+    "<p style='font-size: 12px; color: red; font-weight: bold;'>     📢 L’abus d’alcool est dangereux pour la santé, à consommer avec modération </p>", 
+    unsafe_allow_html=True
+)
+
 
 
 
@@ -492,7 +500,7 @@ st.markdown("""
 st.markdown("""
     <div class="contact-box">
         📩 Pour plus de renseignements, contactez-moi !<br><br>
-        📨 DM via <a href="https://twitter.com/gusano197" target="_blank">@gusano197</a> ou ✉ <a href="mailto:contact@talan-patrimoine.fr">contact@talan-patrimoine.fr</a>
+        📨 DM via <a href="https://twitter.com/gusano197" target="_blank">@gusano197</a> ou ✉ <a href="mailto:nicolas.galan@talan-patrimoine.fr">contact@talan-patrimoine.fr</a>
     </div>
 """, unsafe_allow_html=True)
 
